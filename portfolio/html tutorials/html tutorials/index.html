@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y.Tejesh Varma - Web Developer & Graphics Designer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Add Three.js for 3D effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Add GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <!-- AOS library for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        /* Override styles for immediate color change */
+        :root {
+            --primary-color: #ef4444; /* Red */
+            --secondary-color: #000; /* Black */
+            --accent-color: #ef4444;
+            --text-color: #fff;
+            --dark-bg: #0a0a0a;
+            --light-bg: #111;
+            --card-bg: rgba(17, 17, 17, 0.9);
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <div id="stars-container"></div>
+    
+    <nav class="navbar">
+        <div class="logo glow-text">
+            <h1><span class="highlight-text">Y.</span>Tejesh Varma</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="glow-text"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#about" class="glow-text"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="#skills" class="glow-text"><i class="fas fa-code"></i> Skills</a></li>
+            <li><a href="#portfolio" class="glow-text"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+            <li><a href="#contact" class="glow-text"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <svg style="position: absolute; width: 0; height: 0;">
+        <defs>
+            <filter id="liquid">
+                <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="50" />
+            </filter>
+            
+            <filter id="glow">
+                <feGaussianBlur stdDeviation="5" result="coloredBlur" />
+                <feMerge>
+                    <feMergeNode in="coloredBlur" />
+                    <feMergeNode in="SourceGraphic" />
+                </feMerge>
+            </filter>
+
+            <!-- Add color matrix filters -->
+            <filter id="redTint">
+                <feColorMatrix type="matrix" 
+                    values="1 0 0 0 0.5
+                            0 0 0 0 0
+                            0 0 0 0 0
+                            0 0 0 1 0" />
+            </filter>
+        </defs>
+    </svg>
+
+    <section id="home" class="hero">
+        <div class="liquid-bg"></div>
+        <div class="lightning"></div>
+        <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
+            <div class="hero-text">
+                <h1 class="glow-text">Hello, I'm <span class="highlight-text">Tejesh Varma</span></h1>
+                <div class="animated-subtitle">
+                    <span class="typewriter">Web Developer</span>
+                    <span class="typewriter">Graphics Designer</span>
+                    <span class="typewriter">UI/UX Designer</span>
+                </div>
+                <p class="hero-description">Creating stunning digital experiences that blend <span class="highlight-text">creativity</span> with <span class="highlight-text">functionality</span></p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="cta-button glow-button">View My Work</a>
+                    <a href="#contact" class="outline-button">Contact Me</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-element"></div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Scroll Down</p>
+        </div>
+    </section>
+
+    <section id="about" class="about section-dark">
+        <div class="section-container" data-aos="fade-up">
+            <h2 class="section-title glow-text">About <span class="highlight-text">Me</span></h2>
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right" data-aos-delay="300">
+                    <div class="image-frame">
+                        <img src="images/profile.jpg" alt="Tejesh Varma" class="profile-image">
+                    </div>
+                </div>
+                <div class="about-text" data-aos="fade-left" data-aos-delay="300">
+                    <p>I am a passionate <span class="highlight-text">Web Developer</span> and <span class="highlight-text">Graphics Designer</span> with a keen eye for detail and a commitment to creating exceptional digital experiences.</p>
+                    <p>My journey in the tech world has equipped me with the skills to develop interactive web applications and design captivating visuals that leave a lasting impression.</p>
+                    <p>I specialize in building responsive websites, chat applications, and creating eye-catching YouTube thumbnails for content creators.</p>
+                    <div class="personal-info">
+                        <div class="info-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Computer Science Graduate</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Based in India</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-laptop-code"></i>
+                            <span>Freelance Available</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills section-light">
+        <div class="section-container" data-aos="fade-up">
+            <h2 class="section-title glow-text">My <span class="highlight-text">Skills</span></h2>
+            <div class="skills-content">
+                <div class="skills-group" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="skills-group-title"><i class="fas fa-code"></i> Web Development</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <span class="skill-name">HTML/CSS</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">React.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Node.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Responsive Design</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-group" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="skills-group-title"><i class="fas fa-paint-brush"></i> Graphics Design</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <span class="skill-name">Photoshop</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Illustrator</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">YouTube Thumbnails</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">UI/UX Design</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Motion Graphics</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio section-dark">
+        <div class="section-container" data-aos="fade-up">
+            <h2 class="section-title glow-text">My <span class="highlight-text">Portfolio</span></h2>
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Dev</button>
+                <button class="filter-btn" data-filter="design">Graphics</button>
+            </div>
+            <div class="portfolio-grid">
+                <!-- Canteen App Project -->
+                <div class="portfolio-item glow-card" data-category="web" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="portfolio-image">
+                        <img src="images/canteenpro.png" alt="Canteen App" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-links">
+                                <a href="#portfolio-modal-1" class="portfolio-link modal-trigger"><i class="fas fa-info-circle"></i></a>
+                                <a href="https://canteenpro.netlify.app/" class="portfolio-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Canteen App</h3>
+                        <p>Web Application</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Chat App Project -->
+                <div class="portfolio-item glow-card" data-category="web" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="portfolio-image">
+                        <img src="images/chatsphere.png" alt="Online Chat App" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-links">
+                                <a href="#portfolio-modal-2" class="portfolio-link modal-trigger"><i class="fas fa-info-circle"></i></a>
+                                <a href="https://1o3.space/" class="portfolio-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>1o3.space Chat App</h3>
+                        <p>Web Application</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">WebSockets</span>
+                            <span class="tag">Firebase</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- YouTube Thumbnails Project -->
+                <div class="portfolio-item glow-card" data-category="design" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="portfolio-image">
+                        <img src="images/thumbnail- (3).jpg" alt="YouTube Thumbnails" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-links">
+                                <a href="#portfolio-modal-3" class="portfolio-link modal-trigger"><i class="fas fa-info-circle"></i></a>
+                                <a href="#" class="portfolio-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>YouTube Thumbnails</h3>
+                        <p>Graphics Design</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Photoshop</span>
+                            <span class="tag">Illustrator</span>
+                            <span class="tag">Digital Art</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Logo Designs Project -->
+                <div class="portfolio-item glow-card" data-category="design" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="portfolio-image">
+                        <img src="images/logo-design.jpg" alt="Logo Design" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-links">
+                                <a href="#portfolio-modal-5" class="portfolio-link modal-trigger"><i class="fas fa-info-circle"></i></a>
+                                <a href="#" class="portfolio-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Logo Designs</h3>
+                        <p>Brand Identity</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Illustrator</span>
+                            <span class="tag">Branding</span>
+                            <span class="tag">Identity</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Add new portfolio item for Figma Finance Analysis Web -->
+                <div class="portfolio-item glow-card" data-category="design" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="portfolio-image">
+                        <img src="images/finance-analysis.jpg" alt="Finance Analysis Web" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-links">
+                                <a href="#portfolio-modal-4" class="portfolio-link modal-trigger"><i class="fas fa-info-circle"></i></a>
+                                <a href="https://www.figma.com/design/bN8fCLJphFuXyirqJ3hE8s/04-app-modern?node-id=0-1&t=IHgsxHptda1lAtig-1" class="portfolio-link" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Finance Analysis Dashboard</h3>
+                        <p>Figma UI/UX Design</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Figma</span>
+                            <span class="tag">UI/UX</span>
+                            <span class="tag">Finance</span>
+                            <span class="tag">Dashboard</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Modals -->
+    <div id="portfolio-modal-1" class="portfolio-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="glow-text">Canteen App</h2>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="images/canteenpro.png" alt="Canteen App">
+                </div>
+                <div class="modal-info">
+                    <h3>Project Details</h3>
+                    <p>An innovative canteen management application that streamlines the food ordering process within institutions. Users can browse menus, place orders, make payments, and receive notifications about order status.</p>
+                    <div class="project-details">
+                        <div class="detail-item">
+                            <h4>Client</h4>
+                            <p>Educational Institution</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Technologies</h4>
+                            <p>React.js, Node.js, Express, MongoDB, Payment Gateway Integration</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Key Features</h4>
+                            <ul>
+                                <li>Real-time order tracking</li>
+                                <li>Secure payment processing</li>
+                                <li>Admin dashboard for canteen staff</li>
+                                <li>Order history and analytics</li>
+                                <li>Responsive design for all devices</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://canteenpro.netlify.app/" class="cta-button glow-button" target="_blank" rel="noopener noreferrer">View Live Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="portfolio-modal-2" class="portfolio-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="glow-text">1o3.space Chat App</h2>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="images/chatsphere.png" alt="Chat App">
+                </div>
+                <div class="modal-info">
+                    <h3>Project Details</h3>
+                    <p>A real-time chat application that allows users to connect with friends, family, and colleagues. The platform offers private messaging, group chats, file sharing, and more in a secure environment.</p>
+                    <div class="project-details">
+                        <div class="detail-item">
+                            <h4>Client</h4>
+                            <p>Personal Project</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Technologies</h4>
+                            <p>JavaScript, WebSockets, Firebase, React, Node.js</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Key Features</h4>
+                            <ul>
+                                <li>End-to-end encryption</li>
+                                <li>Real-time message delivery</li>
+                                <li>Media sharing capabilities</li>
+                                <li>User presence indicators</li>
+                                <li>Responsive design for mobile and desktop</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://1o3.space/" class="cta-button glow-button" target="_blank" rel="noopener noreferrer">View Live Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="portfolio-modal-3" class="portfolio-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="glow-text">YouTube Thumbnails</h2>
+            <div class="modal-body">
+                <div class="modal-gallery">
+                    <img src="images/thumbnail- (1).jpg" alt="Thumbnail 1">
+                    <img src="images/thumbnail- (2).jpg" alt="Thumbnail 2">
+                    <img src="images/thumbnail- (3).jpg" alt="Thumbnail 3">
+                    <img src="images/thumbnail- (4).jpg" alt="Thumbnail 4">
+                </div>
+                <div class="modal-info">
+                    <h3>Project Details</h3>
+                    <p>A collection of eye-catching YouTube thumbnails designed to increase click-through rates and audience engagement for content creators. Each design is crafted to reflect the video's content while standing out in search results.</p>
+                    <div class="project-details">
+                        <div class="detail-item">
+                            <h4>Clients</h4>
+                            <p>Various YouTube Content Creators</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Tools</h4>
+                            <p>Adobe Photoshop, Adobe Illustrator, Canva Pro</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Design Process</h4>
+                            <ul>
+                                <li>Content analysis and audience research</li>
+                                <li>Concept sketching and mockups</li>
+                                <li>High-quality image compositing</li>
+                                <li>Typography and color optimization</li>
+                                <li>A/B testing for maximum engagement</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="#" class="cta-button glow-button" target="_blank" rel="noopener noreferrer">View Full Gallery</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logo Designs Project Modal -->
+    <div id="portfolio-modal-5" class="portfolio-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Logo Designs</h2>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="images/logos/logo3.png" alt="Logo Design">
+                </div>
+                <div class="modal-info">
+                    <h3>Brand Identity Projects</h3>
+                    <p>A collection of logo designs created for various clients and industries, showcasing versatility in style and concept development.</p>
+                    
+                    <div class="project-details">
+                        <div class="detail-item">
+                            <h4>Project Details</h4>
+                            <ul>
+                                <li><strong>Client:</strong> Various</li>
+                                <li><strong>Date:</strong> 2023-2024</li>
+                                <li><strong>Category:</strong> Brand Identity</li>
+                            </ul>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Technologies Used</h4>
+                            <ul>
+                                <li>Adobe Illustrator</li>
+                                <li>Adobe Photoshop</li>
+                                <li>Figma</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <button class="view-gallery-btn" onclick="window.location.href='logos.html'">View Logo Gallery</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logo Gallery Modal - Improved -->
+    <div id="logo-gallery-modal" class="gallery-modal">
+        <div class="gallery-modal-content">
+            <span class="close-gallery">&times;</span>
+            <h2>Logo Design Collection</h2>
+            <div class="logo-gallery-container">
+                <div class="logo-gallery">
+                    <div class="logo-item">
+                        <img src="images/logos/logo1.png" alt="Logo Design 1">
+                        <div class="logo-caption">Aleph - Tech Logo</div>
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/logo2.png" alt="Logo Design 2">
+                        <div class="logo-caption">Colorful Blocks</div>
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/logo3.png" alt="Logo Design 3">
+                        <div class="logo-caption">Infinity Solutions</div>
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/logo4.png" alt="Logo Design 4">
+                        <div class="logo-caption">Flow App</div>
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/logo5.png" alt="Logo Design 5">
+                        <div class="logo-caption">Levido Brand</div>
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/logo6.png" alt="Logo Design 6">
+                        <div class="logo-caption">Nexus Tech</div>
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/logo7.png" alt="Logo Design 7">
+                        <div class="logo-caption">Feather Design</div>
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/logo8.png" alt="Logo Design 8">
+                        <div class="logo-caption">X-Mark Identity</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add the missing portfolio modal -->
+    <div id="portfolio-modal-4" class="portfolio-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="glow-text">Finance Analysis Dashboard</h2>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="images/finance-analysis.jpg" alt="Finance Analysis Dashboard">
+                </div>
+                <div class="modal-info">
+                    <h3>Project Details</h3>
+                    <p>A comprehensive financial analysis dashboard designed in Figma that provides intuitive visualization of complex financial data. The dashboard enables users to track investments, analyze market trends, and make data-driven financial decisions.</p>
+                    <div class="project-details">
+                        <div class="detail-item">
+                            <h4>Client</h4>
+                            <p>FinTech Solutions Inc.</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Technologies</h4>
+                            <p>Figma, Adobe Illustrator, Prototyping, User Research</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Key Features</h4>
+                            <ul>
+                                <li>Interactive financial visualizations</li>
+                                <li>Responsive design for all devices</li>
+                                <li>Dark and light mode options</li>
+                                <li>Customizable dashboard widgets</li>
+                                <li>Real-time data integration mockups</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://www.figma.com/design/bN8fCLJphFuXyirqJ3hE8s/04-app-modern?node-id=1-2&t=IHgsxHptda1lAtig-1" class="cta-button glow-button" target="_blank" rel="noopener noreferrer">View Figma Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="contact" class="contact section-light">
+        <div class="section-container" data-aos="fade-up">
+            <h2 class="section-title glow-text">Get In <span class="highlight-text">Touch</span></h2>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right" data-aos-delay="200">
+                    <div class="contact-card">
+                        <div class="contact-card-header">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <h3>Email Me</h3>
+                        </div>
+                        <p>Tejeshvarma07@gmail.com</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-header">
+                            <i class="fas fa-phone-alt contact-icon"></i>
+                            <h3>Call Me</h3>
+                        </div>
+                        <p>6300313328</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-header">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <h3>Location</h3>
+                        </div>
+                        <p>India</p>
+                    </div>
+                    <div class="social-links-contact">
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <form id="contact-form" class="contact-form" data-aos="fade-left" data-aos-delay="200">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Your Email" required>
+                        <label for="email">Your Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" placeholder="Subject" required>
+                        <label for="subject">Subject</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" placeholder="Your Message" required></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                    <button type="submit" class="submit-btn glow-button">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2 class="glow-text">Y.Tejesh Varma</h2>
+                <p>Web Developer & Graphics Designer</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Connect With Me</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Y.Tejesh Varma. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#home" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Main JavaScript -->
+    <script src="js/fixed_main.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+</body>
+</html> 

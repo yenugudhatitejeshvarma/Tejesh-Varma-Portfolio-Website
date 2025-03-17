@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Design Gallery - Y.Tejesh Varma</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/logo-gallery.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Add GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <!-- AOS library for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        /* Override styles for immediate color change */
+        :root {
+            --primary-color: #ef4444; /* Red */
+            --secondary-color: #000; /* Black */
+            --accent-color: #ef4444;
+            --text-color: #fff;
+            --dark-bg: #0a0a0a;
+            --light-bg: #111;
+            --card-bg: rgba(17, 17, 17, 0.9);
+        }
+    </style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <div id="stars-container"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo glow-text">
+            <h1><a href="index.html"><span class="highlight-text">Y.</span>Tejesh Varma</a></h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="glow-text"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="index.html#about" class="glow-text"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="index.html#portfolio" class="glow-text"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+            <li><a href="index.html#contact" class="glow-text"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Logo Gallery Section -->
+    <section class="logo-gallery-page">
+        <div class="section-container" data-aos="fade-up">
+            <h1 class="gallery-title glow-text">Logo Design <span class="highlight-text">Collection</span></h1>
+            <p class="gallery-description">A showcase of logo designs created for various clients and industries, demonstrating versatility in style and concept development.</p>
+            
+            <div class="logo-grid">
+                <div class="logo-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="logo-card-inner">
+                        <img src="images/logos/logo1.png" alt="Aleph - Tech Logo">
+                        <div class="logo-details">
+                            <h3>Aleph</h3>
+                            <p>Minimalist Tech Logo</p>
+                            <a href="#" class="view-logo-btn" data-index="0">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="logo-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="logo-card-inner">
+                        <img src="images/logos/logo2.png" alt="Colorful Blocks - Creative Agency" class="featured-logo">
+                        <div class="logo-details">
+                            <h3>Colorful Blocks</h3>
+                            <p>Creative Agency</p>
+                            <a href="#" class="view-logo-btn" data-index="1">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="logo-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="logo-card-inner">
+                        <img src="images/logos/logo3.png" alt="Infinity - Digital Solutions">
+                        <div class="logo-details">
+                            <h3>Infinity</h3>
+                            <p>Digital Solutions</p>
+                            <a href="#" class="view-logo-btn" data-index="2">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="logo-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="logo-card-inner">
+                        <img src="images/logos/logo4.png" alt="Flow - Modern Workflow App">
+                        <div class="logo-details">
+                            <h3>Flow</h3>
+                            <p>Modern Workflow App</p>
+                            <a href="#" class="view-logo-btn" data-index="3">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="logo-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="logo-card-inner">
+                        <img src="images/logos/logo5.png" alt="Levido - Brand Identity">
+                        <div class="logo-details">
+                            <h3>Levido</h3>
+                            <p>Brand Identity</p>
+                            <a href="#" class="view-logo-btn" data-index="4">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="logo-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="logo-card-inner">
+                        <img src="images/logos/logo6.png" alt="Nexus - Tech Integration">
+                        <div class="logo-details">
+                            <h3>Nexus</h3>
+                            <p>Tech Integration</p>
+                            <a href="#" class="view-logo-btn" data-index="5">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="logo-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="logo-card-inner">
+                        <img src="images/logos/logo7.png" alt="Feather - Minimalist Design">
+                        <div class="logo-details">
+                            <h3>Feather</h3>
+                            <p>Minimalist Design</p>
+                            <a href="#" class="view-logo-btn" data-index="6">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="logo-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="logo-card-inner">
+                        <img src="images/logos/logo8.png" alt="X-Mark - Brand Identity">
+                        <div class="logo-details">
+                            <h3>X-Mark</h3>
+                            <p>Brand Identity</p>
+                            <a href="#" class="view-logo-btn" data-index="7">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Lightbox -->
+    <div class="logo-lightbox">
+        <div class="lightbox-content">
+            <span class="close-lightbox" aria-label="Close lightbox">&times;</span>
+            <div class="lightbox-image-container">
+                <img src="" alt="Logo Fullscreen" class="lightbox-image">
+            </div>
+            <div class="lightbox-details">
+                <h2 class="lightbox-title glow-text"></h2>
+                <p class="lightbox-description"></p>
+                <div class="lightbox-info">
+                    <div class="info-item">
+                        <h4>Client</h4>
+                        <p class="lightbox-client"></p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Industry</h4>
+                        <p class="lightbox-industry"></p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Year</h4>
+                        <p class="lightbox-year"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="lightbox-navigation">
+                <button class="prev-logo" aria-label="Previous logo"><i class="fas fa-chevron-left"></i></button>
+                <button class="next-logo" aria-label="Next logo"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2 class="glow-text">Y.Tejesh Varma</h2>
+                <p>Web Developer & Graphics Designer</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Connect</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-behance"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-dribbble"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Y.Tejesh Varma. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Add stars effect -->
+    <script>
+        function createStars() {
+            const starsContainer = document.getElementById('stars-container');
+            const starCount = 100;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                
+                // Random position
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                
+                // Random size
+                const size = Math.random() * 2;
+                
+                // Random animation delay
+                const delay = Math.random() * 5;
+                
+                star.style.left = `${posX}%`;
+                star.style.top = `${posY}%`;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.animationDelay = `${delay}s`;
+                
+                starsContainer.appendChild(star);
+            }
+        }
+        
+        // Initialize custom cursor
+        function initCustomCursor() {
+            const cursor = document.querySelector('.cursor');
+            const cursorFollower = document.querySelector('.cursor-follower');
+            
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+                
+                // Add a slight delay to follower for smooth effect
+                setTimeout(() => {
+                    cursorFollower.style.left = e.clientX + 'px';
+                    cursorFollower.style.top = e.clientY + 'px';
+                }, 50);
+            });
+            
+            // Add hover effect to links and buttons
+            const links = document.querySelectorAll('a, button, .logo-card');
+            
+            links.forEach(link => {
+                link.addEventListener('mouseenter', () => {
+                    cursor.classList.add('active');
+                    cursorFollower.classList.add('active');
+                });
+                
+                link.addEventListener('mouseleave', () => {
+                    cursor.classList.remove('active');
+                    cursorFollower.classList.remove('active');
+                });
+            });
+        }
+    </script>
+
+    <script src="js/logo-gallery.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Call functions when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            createStars();
+            initCustomCursor();
+        });
+    </script>
+</body>
+</html> 
