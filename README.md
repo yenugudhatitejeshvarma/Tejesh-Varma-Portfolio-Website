@@ -44,8 +44,8 @@ This is a personal portfolio website for **Y. Tejesh Varma**, showcasing skills,
 ## Contact
 For any inquiries, reach out via:
 - **Email**: tejeshvarma07@gmail.com
-- **GitHub**: [Your GitHub Profile](#)
-- **LinkedIn**: [Your LinkedIn Profile](#)
+- **GitHub**: [yenugudhatitejeshvarma](#)
+- **LinkedIn**: [www.linkedin.com/in/tejesh-varma-478b51343](#)
 
 ---
 **© 2024 Y. Tejesh Varma. All rights reserved.**
